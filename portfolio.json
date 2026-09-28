@@ -1,0 +1,95 @@
+  {
+  "basics": {
+    "name": "Abdul Rehman",
+    "shortName": "AR",
+    "label": "BSCS Student",
+    "headline": "I'm a BSCS student studying at GUTech ",
+    "summary": "Student based in Karachi, Pakistan. I study full-time.",
+    "location": {
+      "country": "Pakistan",
+      "countryCode": "PK",
+      "region": "Karachi"
+    },
+    "email": "abdulrehman120@gmail.com",
+        "availability": "Currently part of GU Tech since April 2026",
+    "leadershipNote": "A team player and a born leader, my sense of responsibility is acknowledged by my professors.",
+    "profiles": [
+      {
+        "network": "LinkedIn",
+        "username": "abdulrehman",
+        "url": "https://www.linkedin.com/in/abdulrehman",
+        "icon": "fa-brands fa-linkedin-in"
+      },
+       {
+          "network": "GitHub",
+        "username": "abdulrehman920",
+        "url": "https://github.com/abdulrehman920",
+        "icon": "fa-brands fa-github"
+      }
+    ]
+  },
+  "about": {
+    "intro": [
+      "My Matric is in general science  and Intermediate in  Computer Science, where I learned c and  C++ for my Intermediate."
+    ],
+    "strengths": [
+      "Core programming logic and concepts like OOP"
+    ]
+  },
+  "skills": [
+    {
+      "category": "Languages",
+      "items": [
+        "C",
+                "Python",
+        "C++"
+      ]
+    }
+  ],
+  "education": [
+    {
+      "institution": "Comprehensive High School",
+      "area": "General science",
+      "studyType": "Matric",
+      "startDate": "2017 -08-01",
+      "endDate": "2019-12-01"
+    },
+    {
+      "institution": "Khawaja Fareed GOVT post Graduate college",
+      "area": "Computer Science",
+      "studyType": "Intermediate",
+      "detailsLabel": "Core Courses",
+      "details": [
+        "Object-Oriented Programming",
+        "Database Systems"
+      ],
+      "startDate": "2019-08-01",
+      "endDate": "2021-06-01"
+    },
+    {
+     "institution": "GU Tech",
+      "area": "Computer Science",
+      "studyType": "BSCS",
+      "startDate": "2026-01-01",
+      "endDate": "2030-12-01"
+    }
+  ],
+  "languages": [
+    {
+      "language": "English",
+      "fluency": "Fluent"
+    },
+    {
+      "language": "Arabic",
+      "fluency": "intermediate"
+    },
+    {
+      "language": "Urdu",
+      "fluency": "Fluent"
+    },
+    {
+      "language": "Punjabi",
+      "fluency": "Native"
+    }
+  ]
+}

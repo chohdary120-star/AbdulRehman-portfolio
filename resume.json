@@ -1,0 +1,145 @@
+{
+  "basics": {
+    "name": "Abdul Rehman",
+    "shortName": "AR",
+    "label": "Computer Science Student",
+    "headline": "Aspiring Solution Architect & Computer Science Undergraduate",
+    "tagline": "Bridging algorithmic thinking with innovative engineering to build scalable digital and hardware solutions.",
+    "summary": "Computer Science student at the German University of Technology in Oman (GUTech). Passionate about core programming, Object-Oriented Design, and hardware-software synergy.",
+    "location": {
+      "country": "Pakistan",
+      "region": "Karachi",
+      "studyLocation": "German University of Technology in Oman (GUTech)"
+    },
+    "email": "mohsin.raza17022@gmail.com",
+    "availability": "Enrolled at GUTech (Class of 2026–2030)",
+    "leadershipNote": "A team player and a born leader, my sense of responsibility is acknowledged by my professors.",
+    "profiles": [
+      {
+        "network": "GitHub",
+        "username": "SyedMohsinRaza1355",
+        "url": "https://github.com/SyedMohsinRaza1355",
+        "icon": "fa-brands fa-github"
+      },
+      {
+        "network": "LinkedIn",
+        "username": "abdulrehman",
+        "url": "https://www.linkedin.com/in/abdulrehman",
+        "icon": "fa-brands fa-linkedin"
+      }
+    ]
+  },
+  "about": {
+    "intro": "My academic journey in Computer Science began in Matric with C, advanced through Intermediate with C++, and expanded independently into Python. I specialize in breaking down complex real-world problems into elegant, object-oriented solutions and scalable architectures.",
+    "strengths": [
+      "Object-Oriented Programming (OOP) & Core Logic",
+      "Database Design & Relational Modeling",
+      "Hardware-Software Concept Design & Green Tech",
+      "Algorithmic Thinking & Visual Process Modeling"
+    ]
+  },
+  "education": [
+    {
+      "institution": "German University of Technology in Oman (GUTech)",
+      "degree": "Bachelor of Science in Computer Science (BSCS)",
+      "period": "2026 — 2030",
+      "highlight": true,
+      "badge": "Current Degree",
+      "description": "Pursuing rigorous computer science education affiliated with RWTH Aachen University standards. Focus on advanced computational theory, systems engineering, software design, and solution architecture.",
+      "courses": [
+        "Computational Systems",
+        "Advanced Data Structures & Algorithms",
+        "Solution Architecture",
+        "Software Engineering Principles"
+      ]
+    },
+    {
+      "institution": "Students' Zone Schooling System",
+      "degree": "Intermediate in Computer Science (HSC)",
+      "period": "2022 — 2024",
+      "highlight": false,
+      "badge": "Completed",
+      "description": "Comprehensive pre-university curriculum focusing on analytical sciences, programming languages, and relational databases.",
+      "courses": [
+        "Object-Oriented Programming (C++)",
+        "Relational Database Management Systems"
+      ]
+    },
+    {
+      "institution": "Habib Public School",
+      "degree": "Matriculation in Computer Science (SSC)",
+      "period": "2012 — 2022",
+      "highlight": false,
+      "badge": "Completed",
+      "description": "Solid foundational background in mathematics, core computer science concepts, and introductory procedural programming in C.",
+      "courses": [
+        "Procedural Programming (C)",
+        "Discrete Mathematics & Fundamentals"
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "title": "RAPTOR Algorithm Flowcharts",
+      "category": "Algorithm & Logic Design",
+      "summary": "Visual algorithm design suite built with RAPTOR, creating executable flowchart architectures to validate complex mathematical logic, looping invariants, and conditional branching.",
+      "highlights": [
+        "Engineered modular flowcharts mapping procedural solutions into visual state diagrams.",
+        "Demonstrated edge-case handling, recursion models, and optimized decision trees.",
+        "Served as a foundational bridge between human-readable pseudocode and compiled C/C++ execution."
+      ],
+      "tags": ["RAPTOR", "Algorithm Design", "Flowcharts", "Data Flow", "Logic Modeling"],
+      "icon": "fa-solid fa-diagram-project",
+      "link": "https://github.com/SyedMohsinRaza1355"
+    },
+    {
+      "title": "Battery-Free Solar-Powered Flashlight",
+      "category": "Clean Tech & Hardware Concept",
+      "summary": "Sustainable hardware engineering concept that replaces degrading chemical battery packs with high-efficiency photovoltaic cells and supercapacitors for virtually infinite charge-discharge cycles.",
+      "highlights": [
+        "Designed rapid-charge energy storage using ultra-capacitors, eliminating lithium waste and toxic degradation.",
+        "Integrated high-lumen low-draw LED array with passive voltage step-up regulation.",
+        "Created an emergency and disaster-resilient lighting design requiring zero maintenance or cell replacements."
+      ],
+      "tags": ["Hardware Concept", "Clean Tech", "Solar PV", "Supercapacitors", "Green Energy"],
+      "icon": "fa-solid fa-solar-panel",
+      "link": "https://github.com/SyedMohsinRaza1355"
+    }
+  ],
+  "skills": [
+    {
+      "category": "Languages",
+      "items": ["C", "C++", "Python", "HTML5", "CSS3", "JavaScript"]
+    },
+    {
+      "category": "Core Competencies",
+      "items": ["Object-Oriented Programming (OOP)", "Database Systems", "Algorithmic Logic", "Data Structures", "Hardware Concepts"]
+    },
+    {
+      "category": "Tools & Environments",
+      "items": ["RAPTOR", "Git & GitHub", "VS Code", "Linux Basics"]
+    }
+  ],
+  "certificates": [
+    {
+      "name": "IELTS Academic",
+      "issuer": "British Council",
+      "url": "https://www.britishcouncil.pk/exam/ielts/dates-locations"
+    },
+    {
+      "name": "Continental Chef",
+      "issuer": "Pakistan Institute of Tourism & Hotel Management (PITHM)",
+      "url": "https://www.pithm.edu.pk/"
+    }
+  ],
+  "languages": [
+    {
+      "language": "English",
+      "fluency": "Fluent / Professional"
+    },
+    {
+      "language": "Urdu",
+      "fluency": "Native"
+    }
+  ]
+}

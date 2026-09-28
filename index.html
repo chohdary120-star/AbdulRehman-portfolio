@@ -1,0 +1,502 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#111714">
+  <meta name="description" content="Personal portfolio and background of Abdul Rehman, computer science student.">
+  <title>Abdul Rehman | Computer Science Student</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      color-scheme: dark;
+      --ink: #eef2ec;
+      --muted: #a3aea5;
+      --dim: #718078;
+      --ground: #111714;
+      --surface: #18211c;
+      --line: #2b3930;
+      --lime: #c6f36b;
+      --mint: #83d9be;
+      --coral: #ff9476;
+      --mono: "DM Mono", "Courier New", monospace;
+      --sans: "Manrope", "Segoe UI", sans-serif;
+      --content: 1120px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 5.5rem; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background-color: var(--ground);
+      background-image: linear-gradient(rgba(198, 243, 107, .025) 1px, transparent 1px), linear-gradient(90deg, rgba(198, 243, 107, .025) 1px, transparent 1px);
+      background-size: 48px 48px;
+      font-family: var(--sans);
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; }
+    a:hover { color: var(--lime); }
+    a:focus-visible, button:focus-visible { outline: 3px solid var(--lime); outline-offset: 4px; }
+    .skip-link {
+      position: absolute;
+      z-index: 10;
+      top: .75rem;
+      left: .75rem;
+      padding: .65rem .9rem;
+      transform: translateY(-160%);
+      color: var(--ground);
+      background: var(--lime);
+      font-weight: 800;
+    }
+    .skip-link:focus { transform: translateY(0); }
+    .shell { width: min(var(--content), calc(100% - 3rem)); margin-inline: auto; }
+    .site-header {
+      position: sticky;
+      z-index: 5;
+      top: 0;
+      border-bottom: 1px solid rgba(163, 174, 165, .16);
+      background: rgba(17, 23, 20, .94);
+      backdrop-filter: blur(12px);
+    }
+    .header-inner { min-height: 72px; display: flex; align-items: center; justify-content: space-between; gap: 2rem; }
+    .wordmark { display: inline-flex; align-items: center; gap: .7rem; color: var(--ink); text-decoration: none; font-weight: 800; }
+    .wordmark-mark { display: grid; width: 34px; aspect-ratio: 1; place-items: center; color: var(--ground); background: var(--lime); font: 500 .75rem var(--mono); }
+    .wordmark-name { font-size: .9rem; }
+    .primary-nav { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: .3rem 1.35rem; }
+    .primary-nav a { color: var(--muted); font-size: .78rem; text-decoration: none; transition: color .18s ease; }
+    .primary-nav a:hover, .primary-nav a:focus-visible { color: var(--lime); }
+    main { overflow: hidden; }
+    .hero { position: relative; padding-block: clamp(5rem, 12vw, 9rem) 6.5rem; }
+    .hero::after {
+      position: absolute;
+      z-index: -1;
+      top: 2rem;
+      right: max(-4rem, calc((100vw - var(--content)) / 2 - 9rem));
+      width: min(38vw, 390px);
+      aspect-ratio: 1;
+      border: 1px solid rgba(131, 217, 190, .18);
+      border-radius: 50%;
+      box-shadow: 0 0 0 34px rgba(131, 217, 190, .025), 0 0 0 68px rgba(131, 217, 190, .02);
+      content: "";
+      pointer-events: none;
+    }
+    .eyebrow, .section-index, .meta, .status, .micro-label { font-family: var(--mono); }
+    .eyebrow { display: flex; align-items: center; gap: .65rem; color: var(--mint); font-size: .75rem; text-transform: uppercase; }
+    .eyebrow::before { width: 24px; height: 1px; background: currentColor; content: ""; }
+    h1 { max-width: 850px; margin: 1.4rem 0 1rem; font-size: clamp(3.2rem, 9vw, 7.4rem); line-height: .99; letter-spacing: 0; overflow-wrap: anywhere; }
+    .hero-role { max-width: 720px; margin: 1.25rem 0; color: var(--lime); font-size: clamp(1.1rem, 2.5vw, 1.55rem); font-weight: 600; }
+    .hero-summary { max-width: 620px; margin: 0; color: var(--muted); font-size: 1.05rem; }
+    .hero-meta { display: flex; flex-wrap: wrap; align-items: center; gap: .75rem 1.5rem; margin-top: 2rem; }
+    .status { display: inline-flex; align-items: center; gap: .55rem; color: var(--ink); font-size: .75rem; }
+    .status::before { width: 8px; height: 8px; border-radius: 50%; background: var(--lime); box-shadow: 0 0 14px rgba(198, 243, 107, .6); content: ""; }
+    .location { color: var(--muted); font-size: .82rem; }
+    .section { padding-block: 5.5rem; border-top: 1px solid var(--line); }
+    .section-heading { display: grid; grid-template-columns: 110px 1fr; gap: 1rem; margin-bottom: 2.6rem; }
+    .section-index { padding-top: .55rem; color: var(--mint); font-size: .73rem; }
+    h2 { margin: 0; font-size: clamp(2rem, 5vw, 3.2rem); line-height: 1.12; letter-spacing: 0; }
+    .section-lede { max-width: 630px; margin: .8rem 0 0; color: var(--muted); }
+    .about-grid { display: grid; grid-template-columns: 1.15fr .85fr; gap: clamp(2rem, 7vw, 6rem); }
+    .about-copy p { max-width: 680px; margin: 0 0 1rem; color: #d1d9d2; font-size: 1.05rem; }
+    .minor-heading { margin: 0 0 1.1rem; color: var(--dim); font: 500 .72rem var(--mono); text-transform: uppercase; }
+    .strength-list, .plain-list { display: grid; gap: .75rem; margin: 0; padding: 0; list-style: none; }
+    .strength-list li { position: relative; padding-left: 1.1rem; color: #d1d9d2; }
+    .strength-list li::before { position: absolute; top: .72em; left: 0; width: 5px; height: 5px; background: var(--coral); content: ""; }
+    .entry-list { display: grid; }
+    .entry { display: grid; grid-template-columns: 190px minmax(0, 1fr); gap: 2rem; padding: 1.7rem 0; border-top: 1px solid var(--line); }
+    .entry:first-child { border-top: 0; padding-top: 0; }
+    .entry-meta { color: var(--mint); font: 400 .75rem var(--mono); }
+    .entry-title { margin: 0; font-size: 1.12rem; line-height: 1.4; }
+    .entry-subtitle { margin: .3rem 0 0; color: var(--muted); font-size: .9rem; }
+    .entry-description { max-width: 680px; margin: .8rem 0 0; color: var(--muted); font-size: .9rem; }
+    .badge { display: inline-block; margin-top: .75rem; padding: .2rem .5rem; border: 1px solid var(--line); color: var(--lime); font: 400 .65rem var(--mono); }
+    .course-list { display: flex; flex-wrap: wrap; gap: .45rem; margin: .8rem 0 0; padding: 0; list-style: none; }
+    .course-list li { color: var(--dim); font-size: .76rem; }
+    .course-list li:not(:last-child)::after { margin-left: .45rem; color: var(--coral); content: "/"; }
+    .empty-state { padding: 1.2rem 1.35rem; border-left: 2px solid var(--coral); background: rgba(255, 148, 118, .055); color: var(--muted); }
+    .empty-state p { margin: 0; }
+    .skills-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 2rem 3rem; }
+    .skill-group { padding-top: 1rem; border-top: 1px solid var(--line); }
+    .skill-group h3 { margin: 0 0 1rem; color: var(--mint); font: 500 .78rem var(--mono); }
+    .skill-items { display: flex; flex-wrap: wrap; gap: .55rem; margin: 0; padding: 0; list-style: none; }
+    .skill-items li { padding: .35rem .65rem; border: 1px solid #344238; color: var(--ink); font-size: .8rem; transition: border-color .18s ease, color .18s ease, transform .18s ease; }
+    .skill-items li:hover { transform: translateY(-2px); border-color: var(--lime); color: var(--lime); }
+    .language-row { display: flex; flex-wrap: wrap; gap: .65rem 2rem; padding: 1rem 0; border-top: 1px solid var(--line); }
+    .language-row:first-child { border-top: 0; }
+    .language-name { min-width: 130px; font-weight: 700; }
+    .language-fluency { color: var(--muted); }
+    .contact-layout { display: grid; grid-template-columns: 1fr minmax(220px, .55fr); align-items: end; gap: 2rem; }
+    .contact-link { display: inline-block; margin-top: 1.2rem; color: var(--lime); font-size: clamp(1.15rem, 3vw, 1.8rem); font-weight: 700; text-decoration-thickness: 1px; text-underline-offset: 6px; overflow-wrap: anywhere; }
+    .contact-aside { color: var(--muted); font-size: .85rem; }
+    .profile-links { display: flex; flex-wrap: wrap; gap: .6rem 1.25rem; margin-top: 1.4rem; }
+    .profile-links a { color: var(--ink); font-size: .85rem; text-decoration-color: var(--dim); text-underline-offset: 4px; }
+    .site-footer { padding-block: 1.5rem; border-top: 1px solid var(--line); color: var(--dim); font: 400 .68rem var(--mono); }
+    .footer-inner { display: flex; flex-wrap: wrap; justify-content: space-between; gap: .5rem 1rem; }
+    [hidden] { display: none !important; }
+    @media (max-width: 700px) {
+      .shell { width: min(var(--content), calc(100% - 2rem)); }
+      .header-inner { align-items: flex-start; flex-direction: column; gap: .75rem; padding-block: .8rem; }
+      .primary-nav { justify-content: flex-start; gap: .35rem 1rem; }
+      .hero { padding-block: 5rem 4.5rem; }
+      .hero::after { top: 4rem; right: -9rem; width: 75vw; }
+      .section { padding-block: 4rem; }
+      .section-heading { grid-template-columns: 1fr; gap: .45rem; margin-bottom: 2rem; }
+      .about-grid, .contact-layout { grid-template-columns: 1fr; gap: 2rem; }
+      .entry { grid-template-columns: 1fr; gap: .5rem; }
+      .skills-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <header class="site-header">
+    <div class="shell header-inner">
+      <a class="wordmark" href="#top" aria-label="Go to homepage">
+        <span class="wordmark-mark" id="brand-mark" aria-hidden="true">AR</span>
+        <span class="wordmark-name" id="brand-name">Portfolio</span>
+      </a>
+      <nav class="primary-nav" aria-label="Main navigation">
+        <a href="#about">About</a>
+        <a href="#experience">Experience</a>
+        <a href="#education">Education</a>
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <section class="hero shell" id="top" aria-labelledby="hero-title">
+      <p class="eyebrow" id="hero-label">Portfolio</p>
+      <h1 id="hero-title">Loading portfolio</h1>
+      <p class="hero-role" id="hero-headline"></p>
+      <p class="hero-summary" id="hero-summary"></p>
+      <div class="hero-meta">
+        <span class="status" id="availability"></span>
+        <span class="location" id="location"></span>
+      </div>
+      <p class="micro-label" id="load-status" role="status" aria-live="polite">Loading portfolio data...</p>
+    </section>
+
+    <section class="section" id="about" aria-labelledby="about-title" hidden>
+      <div class="shell">
+        <div class="section-heading">
+          <span class="section-index">01 / PROFILE</span>
+          <div><h2 id="about-title">A little about me</h2><p class="section-lede">Background, interests, and the way I approach my work.</p></div>
+        </div>
+        <div class="about-grid">
+          <div class="about-copy" id="about-copy"></div>
+          <div id="strengths-wrap" hidden><h3 class="minor-heading">Strengths</h3><ul class="strength-list" id="strengths-list"></ul></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="experience" aria-labelledby="experience-title" hidden>
+      <div class="shell">
+        <div class="section-heading">
+          <span class="section-index">02 / PRACTICE</span>
+          <div><h2 id="experience-title">Experience</h2><p class="section-lede">Roles, responsibilities, and work along the way.</p></div>
+        </div>
+        <div class="entry-list" id="experience-list"></div>
+      </div>
+    </section>
+
+    <section class="section" id="education" aria-labelledby="education-title" hidden>
+      <div class="shell">
+        <div class="section-heading">
+          <span class="section-index">03 / LEARNING</span>
+          <div><h2 id="education-title">Education</h2><p class="section-lede">A foundation built through study and continued curiosity.</p></div>
+        </div>
+        <div class="entry-list" id="education-list"></div>
+      </div>
+    </section>
+
+    <section class="section" id="projects" aria-labelledby="projects-title" hidden>
+      <div class="shell">
+        <div class="section-heading">
+          <span class="section-index">04 / SELECTED WORK</span>
+          <div><h2 id="projects-title">Projects</h2><p class="section-lede">Things explored, designed, and brought to life.</p></div>
+        </div>
+        <div class="entry-list" id="projects-list"></div>
+      </div>
+    </section>
+
+    <section class="section" id="skills" aria-labelledby="skills-title" hidden>
+      <div class="shell">
+        <div class="section-heading">
+          <span class="section-index">05 / TOOLKIT</span>
+          <div><h2 id="skills-title">Skills &amp; spoken languages</h2><p class="section-lede">Tools and subjects I have worked with so far.</p></div>
+        </div>
+        <div class="skills-grid" id="skills-grid"></div>
+        <div id="languages-wrap" hidden style="margin-top: 3rem">
+          <h3 class="minor-heading">Spoken languages</h3>
+          <div id="languages-list"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="contact" aria-labelledby="contact-title" hidden>
+      <div class="shell">
+        <div class="section-heading">
+          <span class="section-index">06 / CONNECT</span>
+          <div><h2 id="contact-title">Get in touch</h2><p class="section-lede">Open to conversations, collaboration, and good questions.</p></div>
+        </div>
+        <div class="contact-layout">
+          <div id="contact-main"></div>
+          <div class="contact-aside" id="contact-aside"></div>
+        </div>
+        <nav class="profile-links" id="profile-links" aria-label="Social profiles"></nav>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer"><div class="shell footer-inner"><span id="footer-name">Personal portfolio</span><span id="footer-year"></span></div></footer>
+
+  <noscript><p class="shell empty-state">This portfolio needs JavaScript enabled to load its data.</p></noscript>
+
+  <script>
+    "use strict";
+
+    const byId = (id) => document.getElementById(id);
+    const listOf = (value) => Array.isArray(value) ? value.filter((item) => item != null && item !== "") : value == null || value === "" ? [] : [value];
+    const text = (value, fallback = "") => typeof value === "string" && value.trim() ? value.trim() : fallback;
+
+    function node(tag, className, content) {
+      const item = document.createElement(tag);
+      if (className) item.className = className;
+      if (content !== undefined && content !== null) item.textContent = String(content);
+      return item;
+    }
+
+    function safeUrl(value) {
+      try {
+        const url = new URL(value, window.location.href);
+        return ["http:", "https:", "mailto:"].includes(url.protocol) ? url.href : "";
+      } catch {
+        return "";
+      }
+    }
+
+    function makeLink(label, value, className = "") {
+      const href = safeUrl(value);
+      if (!href) return null;
+      const link = node("a", className, label);
+      link.href = href;
+      if (href.startsWith("http:" ) || href.startsWith("https:")) {
+        link.target = "_blank";
+        link.rel = "noopener noreferrer";
+      }
+      return link;
+    }
+
+    function initials(name, fallback) {
+      const parts = text(name).split(/\s+/).filter(Boolean);
+      return parts.length ? parts.slice(0, 2).map((part) => part[0]).join("").toUpperCase() : fallback;
+    }
+
+    function year(value) {
+      const raw = text(value);
+      const match = raw.match(/\b\d{4}\b/);
+      return match ? match[0] : raw;
+    }
+
+    function dateRange(item) {
+      if (text(item.period)) return item.period;
+      const start = year(item.startDate);
+      const end = year(item.endDate);
+      if (start && end) return `${start} — ${end}`;
+      return start || end || "";
+    }
+
+    function addEmptyState(container, message) {
+      const empty = node("div", "empty-state");
+      empty.append(node("p", "", message));
+      container.replaceChildren(empty);
+    }
+
+    function renderEntries(container, entries, kind) {
+      const values = listOf(entries).filter((item) => item && typeof item === "object");
+      if (!values.length) {
+        const message = kind === "experience" ? "No experience details have been added yet." : "No projects have been added yet.";
+        addEmptyState(container, message);
+        return;
+      }
+
+      container.replaceChildren(...values.map((item) => {
+        const article = node("article", "entry");
+        const meta = node("div", "entry-meta", text(item.period) || dateRange(item));
+        const content = node("div", "entry-content");
+        const title = text(item.title) || text(item.role) || text(item.position) || "Untitled";
+        const heading = node("h3", "entry-title", title);
+        const subtitle = text(item.company) || text(item.organization) || text(item.category);
+        content.append(heading);
+        if (subtitle) content.append(node("p", "entry-subtitle", subtitle));
+        const description = text(item.summary) || text(item.description);
+        if (description) content.append(node("p", "entry-description", description));
+        for (const highlight of listOf(item.highlights)) content.append(node("p", "entry-description", highlight));
+        const tags = listOf(item.tags);
+        if (tags.length) {
+          const tagList = node("ul", "course-list");
+          for (const tag of tags) tagList.append(node("li", "", tag));
+          content.append(tagList);
+        }
+        const link = makeLink(text(item.linkLabel, "View project"), item.url || item.link);
+        if (link) {
+          link.className = "entry-description";
+          content.append(link);
+        }
+        article.append(meta, content);
+        return article;
+      }));
+    }
+
+    function renderEducation(items) {
+      const container = byId("education-list");
+      const values = listOf(items).filter((item) => item && typeof item === "object");
+      if (!values.length) {
+        addEmptyState(container, "Education details have not been added yet.");
+        return;
+      }
+      container.replaceChildren(...values.map((item) => {
+        const article = node("article", "entry");
+        const meta = node("div", "entry-meta", dateRange(item));
+        const content = node("div", "entry-content");
+        const title = text(item.degree) || text(item.studyType) || text(item.institution) || "Education";
+        content.append(node("h3", "entry-title", title));
+        if (text(item.institution) && text(item.institution) !== title) content.append(node("p", "entry-subtitle", item.institution));
+        const area = text(item.area);
+        if (area) content.append(node("p", "entry-subtitle", area));
+        const description = text(item.description);
+        if (description) content.append(node("p", "entry-description", description));
+        if (item.badge) content.append(node("span", "badge", item.badge));
+        const courses = listOf(item.courses || item.details);
+        if (courses.length) {
+          if (text(item.detailsLabel)) content.append(node("p", "entry-subtitle", item.detailsLabel));
+          const courseList = node("ul", "course-list");
+          for (const course of courses) courseList.append(node("li", "", course));
+          content.append(courseList);
+        }
+        article.append(meta, content);
+        return article;
+      }));
+    }
+
+    function renderSkills(skills) {
+      const grid = byId("skills-grid");
+      const groups = listOf(skills).filter((item) => item && typeof item === "object" && listOf(item.items).length);
+      if (!groups.length) {
+        addEmptyState(grid, "Skills have not been added yet.");
+        return;
+      }
+      grid.replaceChildren(...groups.map((group) => {
+        const section = node("section", "skill-group");
+        section.append(node("h3", "", text(group.category, "Skills")));
+        const list = node("ul", "skill-items");
+        for (const skill of listOf(group.items)) list.append(node("li", "", skill));
+        section.append(list);
+        return section;
+      }));
+    }
+
+    function renderLanguages(languages) {
+      const values = listOf(languages).filter((item) => item && typeof item === "object");
+      const wrap = byId("languages-wrap");
+      if (!values.length) return;
+      wrap.hidden = false;
+      byId("languages-list").replaceChildren(...values.map((item) => {
+        const row = node("div", "language-row");
+        row.append(node("span", "language-name", text(item.language, "Language")));
+        if (text(item.fluency)) row.append(node("span", "language-fluency", item.fluency));
+        return row;
+      }));
+    }
+
+    function render(data) {
+      const basics = data && data.basics && typeof data.basics === "object" ? data.basics : {};
+      const about = data && data.about && typeof data.about === "object" ? data.about : {};
+      const fullName = text(basics.name, "Portfolio");
+      const shortName = text(basics.shortName, initials(fullName, "P"));
+      document.title = `${fullName} | ${text(basics.label, "Personal Portfolio")}`;
+      byId("brand-mark").textContent = shortName;
+      byId("brand-name").textContent = fullName;
+      byId("hero-title").textContent = fullName;
+      byId("hero-label").textContent = text(basics.label, "Personal Portfolio");
+      byId("hero-headline").textContent = text(basics.headline, text(basics.tagline));
+      byId("hero-summary").textContent = text(basics.summary, text(basics.tagline, ""));
+      byId("availability").textContent = text(basics.availability, "");
+      byId("availability").hidden = !text(basics.availability);
+
+      const location = basics.location && typeof basics.location === "object" ? basics.location : {};
+      byId("location").textContent = [location.region, location.country].filter(Boolean).join(", ");
+      byId("location").hidden = !byId("location").textContent;
+
+      const intro = listOf(about.intro);
+      const aboutCopy = byId("about-copy");
+      if (intro.length) aboutCopy.replaceChildren(...intro.map((paragraph) => node("p", "", paragraph)));
+      else aboutCopy.append(node("p", "", "More about me will be added soon."));
+      const strengths = listOf(about.strengths);
+      if (strengths.length) {
+        byId("strengths-wrap").hidden = false;
+        byId("strengths-list").replaceChildren(...strengths.map((strength) => node("li", "", strength)));
+      }
+      byId("about").hidden = false;
+
+      renderEntries(byId("experience-list"), data.experience, "experience");
+      byId("experience").hidden = false;
+      renderEducation(data.education);
+      byId("education").hidden = false;
+      renderEntries(byId("projects-list"), data.projects, "projects");
+      byId("projects").hidden = false;
+      renderSkills(data.skills);
+      renderLanguages(data.languages);
+      byId("skills").hidden = false;
+
+      const email = text(basics.email);
+      const contact = byId("contact-main");
+      if (email) {
+        const link = makeLink(email, `mailto:${email}`, "contact-link");
+        if (link) contact.replaceChildren(link);
+      } else {
+        contact.replaceChildren(node("p", "empty-state", "Contact details have not been added yet."));
+      }
+      const aside = byId("contact-aside");
+      const leadership = text(basics.leadershipNote);
+      const studyLocation = text(location.studyLocation);
+      if (leadership) aside.append(node("p", "", leadership));
+      if (studyLocation) aside.append(node("p", "", studyLocation));
+      const profiles = listOf(basics.profiles).filter((profile) => profile && typeof profile === "object");
+      const profileNav = byId("profile-links");
+      for (const profile of profiles) {
+        const link = makeLink(text(profile.network, text(profile.username, "Profile")), profile.url);
+        if (link) profileNav.append(link);
+      }
+      byId("profile-links").hidden = !profileNav.childElementCount;
+      byId("contact").hidden = false;
+
+      byId("footer-name").textContent = fullName;
+      byId("footer-year").textContent = `© ${new Date().getFullYear()}`;
+      byId("load-status").textContent = "";
+    }
+
+    fetch("./portfolio.json", { headers: { Accept: "application/json" } })
+      .then((response) => {
+        if (!response.ok) throw new Error(`Portfolio data request failed (${response.status}).`);
+        return response.json();
+      })
+      .then((data) => render(data))
+      .catch(() => {
+        byId("hero-title").textContent = "Portfolio data unavailable";
+        byId("hero-headline").textContent = "The portfolio could not load its data file.";
+        byId("hero-summary").textContent = "Run a local web server from this folder, then open the site at http://localhost:8000.";
+        byId("load-status").textContent = "Check that portfolio.json is valid and available next to index.html.";
+      });
+  </script>
+</body>
+</html>
